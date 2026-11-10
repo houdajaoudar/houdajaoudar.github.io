@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Houda Jaoudar — Portfolio</title>
+<meta name="description" content="Houda Jaoudar, étudiante en génie logiciel (coop) à l'Université d'Ottawa. Projets en IA, cloud et IoT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--accent:#FF4FA3;--bg:#0B0710;--panel:#140C17;--panel2:#1A0F1D;--line:#2A1A27;--line2:#4A2F44;--text:#F3E8EF;--soft:#E9D6E2;--muted:#B9A3B3;--pink2:#FFC2DF;--ink:#1A0614}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif}
+a{color:#FF8CC6}a:hover{color:var(--pink2)}
+.mono{font-family:'JetBrains Mono',monospace}
+.pixel{font-family:'Silkscreen',monospace;font-weight:400}
+.wrap{max-width:1200px;margin:0 auto;padding:80px 24px}
+.page{position:relative;overflow:hidden;min-height:100vh}
+#rain{position:fixed;inset:0;overflow:hidden;pointer-events:none;color:var(--accent);z-index:0}
+.rain-col{position:absolute;top:-40%;width:16px;font-family:'JetBrains Mono',monospace;font-size:15px;line-height:18px;word-break:break-all;text-align:center;animation:rain linear infinite}
+@keyframes rain{from{transform:translateY(0)}to{transform:translateY(180vh)}}
+@media (prefers-reduced-motion:reduce){.rain-col{animation:none;top:0}}
+header,section,footer{position:relative;z-index:1}
+header{border-bottom:1px solid var(--line);background:rgba(11,7,16,.85);backdrop-filter:blur(6px);position:sticky;top:0;z-index:5}
+nav{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-size:20px}
+.links{display:flex;flex-wrap:wrap;gap:4px;font-size:14px}
+.links a{color:var(--soft);text-decoration:none;padding:12px 10px}
+section{border-top:1px solid var(--line)}
+.kicker{margin:0;font-size:14px;color:var(--accent)}
+h2{margin:6px 0 0;font-size:40px;color:#fff}
+.btn{display:inline-block;text-decoration:none;border-radius:6px;padding:14px 22px;font-weight:600;font-size:16px}
+.btn-main{background:var(--accent);color:var(--ink)}.btn-main:hover{color:var(--ink);filter:brightness(1.1)}
+.btn-ghost{border:1px solid var(--accent);color:var(--pink2);font-weight:500}
+.btn-sm{border:1px solid var(--line2);color:var(--text);text-decoration:none;border-radius:6px;padding:12px 16px;font-size:14px;display:inline-block}
+.icons{display:flex;flex-wrap:wrap;gap:20px}
+.icons a{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--soft);font-size:12px}
+.icons span{width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--ink);display:flex;align-items:center;justify-content:center}
+.window{background:var(--panel);border:1px solid var(--line2);border-radius:10px;overflow:hidden}
+.bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.dot{width:11px;height:11px;border-radius:50%}
+.d1{background:var(--accent)}.d2{background:var(--pink2)}.d3{background:#5A4655}
+.bar .name{margin-left:8px;font-size:13px;color:var(--muted)}
+pre{margin:0;padding:22px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:15px;line-height:1.75;color:var(--text)}
+.k{color:var(--accent)}.f{color:#C9A7FF}.s{color:var(--pink2)}.c{color:#9C8797}
+.tag{border:1px solid var(--line2);border-radius:4px;padding:4px 8px;color:var(--pink2)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;font-size:12px}
+.grid-skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skill{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px}
+.skill p{margin:0}
+.timeline{margin:0;padding:0;list-style:none}
+.timeline li{display:grid;grid-template-columns:140px minmax(0,1fr);gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.timeline .when{font-size:14px;color:var(--accent)}
+.timeline .what{margin:0;font-size:18px;font-weight:500;color:#fff}
+.timeline .where{margin:4px 0 0;font-size:15px;color:var(--muted)}
+.timeline .desc{margin:10px 0 0;font-size:15px;line-height:1.6;color:var(--soft);max-width:680px}
+@media (max-width:640px){.timeline li{grid-template-columns:1fr;gap:6px}h2{font-size:30px}}
+</style>
+</head>
+<body>
+<div id="rain" aria-hidden="true"></div>
+
+<header>
+<nav aria-label="Navigation principale">
+<a class="brand pixel" href="#accueil">
+<svg width="21" height="18" viewBox="0 0 7 6" aria-hidden="true" shape-rendering="crispEdges"><path fill="#FF4FA3" d="M1 0h2v1h1v-1h2v1h1v2h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h-1v-2h1z"/></svg>
+houda.dev
+</a>
+<div class="links mono">
+<a href="#apropos">/à-propos</a>
+<a href="#projets">/projets</a>
+<a href="#competences">/compétences</a>
+<a href="#parcours">/parcours</a>
+<a href="#contact">/contact</a>
+<a href="assets/CV-Houda-Jaoudar.pdf" download style="background:var(--accent);color:var(--ink);border-radius:6px;padding:12px 16px;font-weight:500">CV FR ↓</a>
+<a href="assets/Resume-Houda-Jaoudar.pdf" download style="border:1px solid var(--accent);color:var(--pink2);border-radius:6px;padding:11px 16px;font-weight:500">CV EN ↓</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section id="accueil" style="border-top:none">
+<div class="wrap" style="padding-top:96px;padding-bottom:88px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+<div style="flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:22px">
+<p class="mono kicker" style="font-size:15px">&gt;_ hello and welcome</p>
+<h1 class="pixel" style="margin:0;font-size:clamp(40px,6vw,76px);line-height:1.05;color:#fff;text-shadow:0 0 18px rgba(255,79,163,.45)">Hello, I'm <span style="color:var(--accent)">Houda</span></h1>
+<p style="margin:0;font-size:22px;line-height:1.5;color:var(--soft);max-width:560px">Étudiante en génie logiciel à l'Université d'Ottawa. Je construis des applications avec l'IA, le cloud et l'IoT.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+<a class="btn btn-main" href="#projets">Voir mes projets</a>
+<a class="btn btn-ghost" href="assets/CV-Houda-Jaoudar.pdf" download>CV en français</a>
+<a class="btn btn-ghost" href="assets/Resume-Houda-Jaoudar.pdf" download>Resume in English</a>
+</div>
+<div class="icons mono" style="margin-top:8px">
+<a href="https://github.com/houdajaoudar" target="_blank" rel="noopener"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5l5 5"/><path d="M16 7l5 5l-5 5"/><path d="M13.5 4l-3 16"/></svg></span>GitHub</a>
+<a href="https://www.linkedin.com/in/houda-jaoudar-436804389/" target="_blank" rel="noopener"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>LinkedIn</a>
+<a href="mailto:houdajaoudar12@gmail.com"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6l9-6"/></svg></span>Courriel</a>
+</div>
+</div>
+<div class="window" style="flex:1 1 380px;min-width:0">
+<div class="bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="name mono">resume_30s.txt</span></div>
+<ul class="mono" style="margin:0;padding:20px 22px 22px;list-style:none;display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.55">
+<li><span class="k">&gt;</span> Génie logiciel, uOttawa (depuis 2026)</li>
+<li><span class="k">&gt;</span> DEC Technologie du génie informatique, Collège La Cité (2026)</li>
+<li><span class="k">&gt;</span> Projet phare : TinyTales, 5 agents IA qui collaborent</li>
+<li><span class="k">&gt;</span> IoT : Raspberry Pi + LoRa</li>
+<li><span class="k">&gt;</span> Bilingue français / anglais</li>
+<li><span class="k">&gt;</span> Cherche : stage co-op été 2027</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="apropos">
+<div class="wrap" style="display:flex;flex-direction:column;gap:32px">
+<div><p class="mono kicker">00 // à propos</p><h2 class="pixel">Qui je suis</h2></div>
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
+<div style="flex:0 1 240px;display:flex;justify-content:center">
+<img src="assets/houda.jpg" alt="Photo de Houda Jaoudar" width="220" height="220" style="width:220px;height:220px;border-radius:50%;border:3px solid var(--accent);object-fit:cover;box-shadow:0 0 28px rgba(255,79,163,.45)">
+</div>
+<div style="flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div class="window">
+<div class="bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="name mono">about_me.py</span></div>
+<pre><span class="k">class</span> Houda:
+    <span class="k">def</span> <span class="f">__init__</span>(self):
+        self.role     = <span class="s">"Software Engineering student"</span>
+        self.school   = <span class="s">"University of Ottawa"</span>
+        self.based_in = <span class="s">"Ottawa, Canada"</span>
+        self.speaks   = [<span class="s">"Français"</span>, <span class="s">"English"</span>]
+        self.loves    = [<span class="s">"AI"</span>, <span class="s">"cloud"</span>, <span class="s">"IoT"</span>, <span class="s">"pink"</span>]
+        self.building = <span class="s">"TinyTales &lt;3"</span>
+
+    <span class="k">def</span> <span class="f">next_step</span>(self):
+        <span class="k">return</span> <span class="s">"co-op internship"</span>  <span class="c"># été 2027</span></pre>
+</div>
+<div class="window">
+<div class="bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="name mono">mindset.sql</span></div>
+<pre><span class="k">SELECT</span> * <span class="k">FROM</span> mindset
+<span class="k">WHERE</span> focus = <span class="s">'growth'</span>
+<span class="k">AND</span> excuses <span class="k">IS NULL</span>;</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="projets">
+<div class="wrap" style="display:flex;flex-direction:column;gap:32px">
+<div><p class="mono kicker">01 // projets</p><h2 class="pixel">Mes projets</h2></div>
+
+<article class="window" style="border-color:var(--accent)">
+<div class="bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="name mono">tinytales.app</span><span class="mono" style="margin-left:auto;font-size:12px;color:var(--ink);background:var(--pink2);border-radius:4px;padding:3px 8px">projet phare</span></div>
+<div style="padding:28px;display:flex;flex-wrap:wrap;gap:32px">
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:28px;font-weight:600;color:#fff">TinyTales</h3>
+<p style="margin:0;font-size:17px;line-height:1.6;color:var(--soft)">Une application qui transforme le temps d'écran passif des enfants en histoires personnalisées, créées par 5 agents IA qui collaborent.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;font-size:15px;line-height:1.5">
+<div><p class="mono k" style="margin:0 0 4px;font-size:12px">PROBLÈME</p><p style="margin:0">Les enfants consomment les écrans de façon passive.</p></div>
+<div><p class="mono k" style="margin:0 0 4px;font-size:12px">SOLUTION</p><p style="margin:0">5 agents IA créent l'histoire, les images et la voix.</p></div>
+<div><p class="mono k" style="margin:0 0 4px;font-size:12px">MON RÔLE</p><p style="margin:0">Développement back-end, présentation de soutenance.</p></div>
+<div><p class="mono k" style="margin:0 0 4px;font-size:12px">RÉSULTAT</p><p style="margin:0">Une app fonctionnelle : histoire illustrée, lue à voix haute et traduite en 4 langues (français, anglais, espagnol, arabe).</p></div>
+</div>
+</div>
+<div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:center;background:var(--bg);border:1px solid var(--line2);border-radius:8px;padding:12px">
+<video src="assets/tinytales-demo.mp4" controls muted loop playsinline preload="metadata" aria-label="Démo de l'application TinyTales" style="display:block;width:100%;max-width:300px;aspect-ratio:9/16;border-radius:6px;background:#000"></video>
+</div>
+<div class="tags mono"><span class="tag">FastAPI</span><span class="tag">AWS Bedrock</span><span class="tag">AWS Polly</span><span class="tag">HuggingFace FLUX</span><span class="tag">MongoDB Atlas</span><span class="tag">Flutter</span></div>
+<div><a class="btn-sm" href="https://github.com/houdajaoudar/tinytales-backend" target="_blank" rel="noopener">GitHub</a></div>
+</div>
+</div>
+</article>
+
+<article class="window">
+<div class="bar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="name mono">lora_capteurs.py</span></div>
+<div style="padding:24px;display:flex;flex-direction:column;gap:14px">
+<h3 style="margin:0;font-size:22px;font-weight:600;color:#fff">Détection d'incendie IoT avec Raspberry Pi et LoRa</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:var(--soft)">Un prototype de détection d'incendie qui envoie une notification immédiate dès qu'un feu est détecté. J'ai choisi LoRa parce que c'est une solution à la fois économique et efficace. Le code du prototype est disponible sur GitHub.</p>
+<div class="tags mono"><span class="tag">Raspberry Pi</span><span class="tag">LoRa</span><span style="background:var(--pink2);color:var(--ink);border-radius:4px;padding:4px 8px">prototype</span></div>
+<div><a class="btn-sm" href="https://github.com/houdajaoudar" target="_blank" rel="noopener">Voir le code sur GitHub →</a></div>
+</div>
+</article>
+</div>
+</section>
+
+<section id="competences">
+<div class="wrap" style="display:flex;flex-direction:column;gap:32px">
+<div><p class="mono kicker">02 // compétences</p><h2 class="pixel">Ma stack</h2></div>
+<div class="grid-skills">
+<div class="skill"><p class="mono k" style="font-size:13px;margin-bottom:12px">IA et cloud</p><p style="font-size:16px;line-height:1.7">AWS Bedrock · AWS Polly · HuggingFace</p></div>
+<div class="skill"><p class="mono k" style="font-size:13px;margin-bottom:12px">Back-end et données</p><p style="font-size:16px;line-height:1.7">Python · FastAPI · MySQL · MongoDB Atlas</p></div>
+<div class="skill"><p class="mono k" style="font-size:13px;margin-bottom:12px">Mobile</p><p style="font-size:16px;line-height:1.7">Flutter · React Native</p></div>
+<div class="skill"><p class="mono k" style="font-size:13px;margin-bottom:12px">IoT et réseaux</p><p style="font-size:16px;line-height:1.7">Raspberry Pi · LoRa</p></div>
+</div>
+</div>
+</section>
+
+<section id="parcours">
+<div class="wrap" style="display:flex;flex-direction:column;gap:32px">
+<div><p class="mono kicker">03 // parcours</p><h2 class="pixel">Mon parcours</h2></div>
+<ol class="timeline">
+<li><span class="when mono">2026 – 2030</span><div><p class="what">B.A.Sc. en génie logiciel (coop)</p><p class="where">Université d'Ottawa · programme Match-Up de l'Entrepreneurship Hub (eHub)</p></div></li>
+<li><span class="when mono">2023 – 2026</span><div><p class="what">DEC en technologie du génie informatique</p><p class="where">Collège La Cité · projet de fin d'études : TinyTales</p><div class="mono" style="margin-top:12px;font-size:13px"><span style="background:var(--accent);color:var(--ink);border-radius:4px;padding:5px 10px;font-weight:500">Moyenne : 3,95 / 4,0</span></div></div></li>
+<li><span class="when mono">2020 – 2022</span><div><p class="what">Représentante du service à la clientèle</p><p class="where">CIBC · contrat temps plein · Montréal, télétravail</p><p class="desc">Soutien aux clients pour leurs cartes de crédit : facturation, litiges, prévention de la fraude, activation et limites de crédit, dans le respect des normes de sécurité et de confidentialité. Objectifs de qualité et de satisfaction atteints ou dépassés.</p></div></li>
+<li><span class="when mono">2020 – 2021</span><div><p class="what">Spécialiste du service à la clientèle</p><p class="where">La Baie d'Hudson · temps partiel · Montréal, en magasin</p></div></li>
+</ol>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap" style="padding-bottom:56px;display:flex;flex-direction:column;gap:28px;align-items:flex-start">
+<p class="mono kicker">04 // contact</p>
+<h2 class="pixel" style="margin:0;font-size:clamp(32px,5vw,56px);line-height:1.1">On travaille <span style="color:var(--accent)">ensemble</span> ?</h2>
+<div class="window mono" style="width:100%;max-width:640px;padding:22px;font-size:15px;line-height:2">
+<p style="margin:0;color:var(--muted)">&gt;_ contact --houda</p>
+<p style="margin:0">courriel : <a href="mailto:houdajaoudar12@gmail.com">houdajaoudar12@gmail.com</a></p>
+<p style="margin:0">linkedin : <a href="https://www.linkedin.com/in/houda-jaoudar-436804389/" target="_blank" rel="noopener">in/houda-jaoudar</a></p>
+<p style="margin:0">github : <a href="https://github.com/houdajaoudar" target="_blank" rel="noopener">github.com/houdajaoudar</a></p>
+</div>
+<p class="mono" style="margin:24px 0 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)">fait avec du code et
+<svg width="14" height="12" viewBox="0 0 7 6" role="img" aria-label="amour" shape-rendering="crispEdges"><path fill="#FF4FA3" d="M1 0h2v1h1v-1h2v1h1v2h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h-1v-2h1z"/></svg>
+· Houda Jaoudar 2026</p>
+</div>
+</section>
+</main>
+
+<script>
+(function(){
+  var set='01<3アカサタナハマヤラワ{}();=>_#$*+', seed=7, rain=document.getElementById('rain');
+  function rnd(){seed=(seed*9301+49297)%233280;return seed/233280;}
+  for(var i=0;i<48;i++){
+    var d=document.createElement('div'), s='', len=18+Math.floor(rnd()*16);
+    for(var k=0;k<len;k++) s+=set[Math.floor(rnd()*set.length)];
+    d.className='rain-col'; d.textContent=s;
+    d.style.left=(i*2.1+rnd()*1.2)+'%';
+    d.style.opacity=(0.12+rnd()*0.22).toFixed(2);
+    d.style.animationDuration=(28+rnd()*24).toFixed(1)+'s';
+    d.style.animationDelay=(-rnd()*50).toFixed(1)+'s';
+    rain.appendChild(d);
+  }
+})();
+</script>
+</body>
+</html>
